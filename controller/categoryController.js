@@ -1,4 +1,5 @@
 const Category= require("../models/categoryModel");
+
 const categoryController ={
     async index(req,res){
       let categories;
