@@ -27,8 +27,20 @@ const categoryController ={
             res.status(500).json({error:"Server Error.",serverError:error});
         }
         res.status(201).json(cat);
+    },
+     async delete(req, res) {
+    let prod;
+    try {
+      const { id } = req.body;
+      prod = await Category.findByIdAndDelete({ _id: id });
+    } catch (error) {
+      res.status(500).json({ error: "Sever Error", serverError: error });
     }
+    res.status(200).json(prod);
+  },
 };
+
+
 
 module.exports = categoryController;
 

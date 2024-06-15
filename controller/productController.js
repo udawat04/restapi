@@ -50,16 +50,16 @@ const productController = {
     res.status(200).json(call);
   },
   // call element by id
-  async fetch1(req, res) {
-    let call;
-    try {
-      const { category } = req.body;
-      call = await Product.find({}, {category:true,_id:false});
-    } catch (error) {
-      res.status(500).json({ error: "Sever Error", serverError: error });
-    }
-    res.status(200).json(call);
-  },
+  // async fetch1(req, res) {
+  //   let call;
+  //   try {
+  //     const { category } = req.body;
+  //     call = await Product.find({}, {category:true,_id:false});
+  //   } catch (error) {
+  //     res.status(500).json({ error: "Sever Error", serverError: error });
+  //   }
+  //   res.status(200).json(call);
+  // },
 
   async delete(req, res) {
     let prod;

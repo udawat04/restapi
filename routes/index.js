@@ -22,16 +22,17 @@ const storage = multer.diskStorage({
   const { adminController} =require('../controller');
   
   router.get("/category" ,categoryController.index);
+  router.delete("/category", categoryController.delete);
 //   router.post("/category" ,categoryController.store);
   router.post("/category",upload.single("thumbnail"),categoryController.store);
 
 
 router.post("/product" ,productController.store);
-// router.get("/product" ,productController.index);
+router.get("/product" ,productController.index);
 router.delete("/product" ,productController.delete);
 router.put("/product/:id" ,productController.update);
 // router.get("/product/:id" ,productController.fetch);
-router.get("/product" ,productController.fetch1);
+// router.get("/product" ,productController.fetch1);
 
 
 router.post("/admin",adminController.store);
