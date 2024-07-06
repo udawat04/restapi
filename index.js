@@ -14,6 +14,7 @@ app.use(cors());
 app.use(express.static(__dirname + "/public"));
 app.use("/upload",express.static("upload"));
 
+app.use("/image", express.static("image"));
 
 app.use(
     bodyParser.urlencoded({ 
@@ -22,7 +23,7 @@ app.use(
     );
 
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
  
 
